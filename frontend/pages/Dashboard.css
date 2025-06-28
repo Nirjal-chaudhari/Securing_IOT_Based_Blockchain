@@ -1,0 +1,101 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Grid Layout for Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ensure larger, evenly spaced cards */
+    gap: 30px;  /* Increase spacing between cards */
+    margin-top: 40px;
+  }
+  
+  /* Card Styling */
+  .data-card {
+    background: #ffffff; /* Clean white background */
+    border-radius: 15px;  /* Soft rounded corners */
+    padding: 35px 25px;        /* More spacious padding inside cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for depth */
+    border: 2px solid #e1e1e1; /* Keep the existing light border around each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;         /* Let card height adjust to content */
+    min-height: 280px;    /* A little higher minimum height for uniformity */
+    text-align: left;     /* Left-align text for better readability */
+    color: #333;
+    overflow: hidden;
+    position: relative;   /* Allow positioning of hover effects */
+  }
+  
+  /* Soft Pastel Background for Cards */
+  .data-card:nth-child(odd) {
+    background: #FFDEE9; /* Light pastel pink */
+  }
+  
+  .data-card:nth-child(even) {
+    background: #B5F0D5; /* Soft pastel green */
+  }
+  
+  /* Hover Effects - Lift and Color Change */
+  .data-card:hover {
+    transform: translateY(-10px); /* Slightly more lift for a modern feel */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    background-color: #f0f9f9; /* Lightens background color when hovered */
+    border-color: #4e73df; /* Change border color on hover to blue */
+  }
+  
+  /* Card Header (Entry Title) */
+  .data-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;  /* Darker color for better visibility */
+  }
+  
+  /* Card Paragraph Styling */
+  .data-card p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  /* Styling for Temperature and Humidity */
+  .data-card p:first-child,
+  .data-card p:nth-child(2) {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e73df; /* Use blue for better contrast */
+  }
+  
+  /* Styling for IPFS CID */
+  .data-card p:last-child {
+    font-size: 14px;
+    font-weight: normal;
+    color: #4e73df; /* Calm blue for CID */
+    word-wrap: break-word; /* Ensure long text breaks into the next line */
+    word-break: break-all;  /* Break at any point if necessary */
+    white-space: normal;    /* Allow text to wrap */
+  }
+  
+  /* Ensure the cards look good on smaller screens */
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+  
+  /* Ensure cards stack nicely on very small screens */
+  @media (max-width: 480px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+  
